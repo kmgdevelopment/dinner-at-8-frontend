@@ -1,0 +1,14 @@
+.banner {
+	.section-wrap {
+		padding-bottom: 0;
+	}
+	h1 {
+		font-size: rem(38);
+		@media #{$media-medium-2} {
+			font-size: rem(48);
+		}
+	}
+	.amount {
+		font-size: 1rem;
+	}
+}

@@ -1,0 +1,12 @@
+@mixin module-base {
+    > * {
+		width: 100%;
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+	> a {
+		display: block;
+		text-decoration: none;
+	}
+}

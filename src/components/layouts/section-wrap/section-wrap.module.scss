@@ -1,0 +1,12 @@
+@import '@/sass/methods/layouts';
+
+.section-wrap {
+	padding-top: $section-padding;
+	padding-bottom: $section-padding;
+	> * {
+		margin-bottom: 1.5rem;
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+}

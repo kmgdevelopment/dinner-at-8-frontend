@@ -1,0 +1,39 @@
+@mixin heading-style($h) {
+	@if $h == h1 {
+		font-size: rem(32);
+	}
+	@else if $h == h2 {
+		font-size: rem(30);
+	}
+	@else if $h == h3 {
+		font-size: rem(28);
+	}
+	@else if $h == h4 {
+		font-size: rem(26);
+	}
+	@else if $h == h5 {
+		font-size: rem(24);
+	}
+	@else if $h == h6 {
+		font-size: rem(22);
+	}
+}
+@mixin reset-list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  > li {
+    list-style-type: none;
+  }
+}
+@mixin reset-link {
+  color: $color-body;
+}
+@mixin reset-button {
+	background: none;
+	padding: 0;
+	border: none;
+	color: $color-body;
+	font-size: 1em;
+	@include font-stack('Montserrat', sans-serif);
+}

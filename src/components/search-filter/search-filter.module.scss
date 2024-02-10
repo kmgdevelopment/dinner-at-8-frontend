@@ -1,0 +1,21 @@
+@import '@/sass/methods/forms';
+
+.search-filter {
+    @include form-single-field;
+    position: relative;
+    input[type='search'] {
+        padding-right: 3.5rem;
+    }
+    &:after {
+        content: "";
+        font-size: 0;
+        width: 20px;
+        height: 20px;
+        display: block;
+        background-image: url('/assets/img/ui/loupe.svg');
+        background-size: 100% auto;
+        position: absolute;
+        top: 1rem;
+        right: 1.25rem;
+    }
+}

@@ -1,0 +1,11 @@
+@import '../methods/forms';
+
+form {
+	@include form;
+}
+.form-single-field {
+	@include form-single-field;
+}
+.form-single-field.search {
+	@include single-field-search;
+}

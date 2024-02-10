@@ -1,0 +1,41 @@
+@mixin form {
+    input[type='text'],
+	input[type='search'],
+	input[type='email'],
+	input[type='tel'],
+	textarea {
+		width: 100%;
+		-webkit-appearance: none;
+	}
+}
+@mixin form-single-field {
+    input[type='text'],
+	input[type='search'],
+	input[type='email'],
+	input[type='tel'] {
+		border: 1px solid #d3d3d3;
+		padding: 1rem 1.5rem;
+		border-radius: 100px;
+	}
+}
+
+@mixin single-field-search {
+    @include form-single-field;
+    position: relative;
+    input[type='search'] {
+        padding-right: 3.5rem;
+    }
+    input[type='submit'] {
+        font-size: 0;
+        width: 20px;
+        height: 20px;
+        display: block;
+        background-image: url('/assets/img/ui/loupe.svg');
+        background-size: 100% auto;
+        border: 0;
+        background-color: transparent;
+        position: absolute;
+        top: 1rem;
+        right: 1.25rem;
+    }
+}

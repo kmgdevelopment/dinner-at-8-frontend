@@ -1,0 +1,25 @@
+@import "@/sass/methods/typography";
+
+.entry-instruction-list {
+	ol {
+		padding-left: 1em;
+		margin-bottom: 1em;
+        li {
+            margin-bottom: 1.5em;
+        }
+		li > *:last-child {
+			margin-bottom: 0;
+		}
+		> li:last-child {
+			margin-bottom: 0;
+		}
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+	h6 {
+		@include font-stack('Montserrat',sans-serif);
+		font-size: 1rem;
+		font-weight: 600;
+	}
+}

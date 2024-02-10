@@ -1,0 +1,55 @@
+// ------------------------
+// LAYOUT
+// ------------------------
+// Base Font Size in Pixels
+$font-size: 18;
+// Max Grid Width
+$max-width: 1000px;
+// Gutter Size
+$gutter: 1.67rem;
+
+// ------------------------
+// ASSET PATHS
+// ------------------------
+$font-path: '/assets/fonts';
+$img-path: '/assets/img/ui';
+
+// ------------------------
+// MEDIA QUERIES
+// ------------------------
+$media-medium-w: 	 768px;
+$media-medium-2-w: 1025px;
+$media-large-w: 	 1300px;
+
+$media-medium:   "screen and (min-width: #{$media-medium-w})";
+$media-medium-2: "screen and (min-width: #{$media-medium-2-w})";
+$media-large:    "screen and (min-width: #{$media-large-w})";
+
+// ------------------------
+// COLORS
+// ------------------------
+// Brand Colors
+$color-p1: #4d917b;
+$color-p2: #982c48;
+$color-p3: #2b6b84;
+
+$color-dark: #000000;
+$color-light: #FFFFFF;
+
+// Elements
+$color-body: $color-dark;
+$color-chrome-light: #EEEEEE; // backgrounds
+$color-chrome-medium: #DDDDDD; // borders and dividers
+$color-chrome-dark:  #CCCCCC; // UI elements
+
+// Links
+$color-link: $color-p1;
+$color-link-hover: darken($color-link, 25%);
+$color-link-visited: $color-link-hover;
+
+// Social Media
+$twitter-color: 			#55ACEE;
+$facebook-color: 			#3b5998;
+$linkedin-color: 			#0077B5;
+$vimeo-color:					#1ab7ea;
+$google-plus-color: 	#dd4b39;

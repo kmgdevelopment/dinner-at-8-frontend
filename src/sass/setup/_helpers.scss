@@ -1,0 +1,14 @@
+/*
+* HELPERS
+*
+* Handy functions for working with SASS
+*/
+@function strip-unit($value) {
+  @return ($value / ($value * 0 + 1));
+}
+@function rem($pixels) {
+	@if not unitless($pixels) {
+		$pixels: strip-unit($pixels);
+	}
+	@return $pixels / $font-size + rem;
+}

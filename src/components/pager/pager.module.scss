@@ -1,0 +1,35 @@
+@import '@/sass/setup/settings';
+
+.pager {
+	width: 100%;
+	display: flex;
+	&.invisible {
+		visibility: hidden;
+		height: 0px;
+		overflow: hidden;
+		padding: 0;
+		border: none;
+	}
+	a {
+		text-decoration: none;
+		font-weight: 600;
+	}
+	.pages {
+		width: 50%;
+		text-align: center;
+		@media #{$media-medium} {
+			width: 90%;
+		}
+	}
+	.prev,
+	.next {
+		width: 25%;
+		@media #{$media-medium} {
+			width: 10%;
+		}
+	}
+	.next {
+		text-align: right;
+        margin-left: auto;
+	}
+}

@@ -1,0 +1,6 @@
+@import '@/sass/setup/settings';
+@import '@/sass/methods/layouts';
+
+.section {
+	@include layout-wrapper;
+}

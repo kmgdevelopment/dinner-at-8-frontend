@@ -1,0 +1,5 @@
+@import '@/sass/methods/layouts';
+
+.section-group {
+    @include layout-group;
+}

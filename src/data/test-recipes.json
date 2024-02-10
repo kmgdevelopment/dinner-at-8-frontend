@@ -1,0 +1,88 @@
+{
+    "data": [
+        {
+            "id": 34665,
+            "title": "Spanakopita Triangles",
+            "slug": "spanakopita-triangles",
+            "recipeImg": "https://s3.us-west-2.amazonaws.com/content.dinnerat8.kristengrote.com/abstracts/spanakopita-triangles.webp"
+        },
+        {
+            "id": 33331,
+            "title": "Squash Salad With Crispy Chickpeas",
+            "slug": "squash-salad-with-crispy-chickpeas",
+            "recipeImg": "https://s3.us-west-2.amazonaws.com/content.dinnerat8.kristengrote.com/abstracts/squash-salad-with-crispy-chickpeas.webp"
+        },
+        {
+            "id": 33157,
+            "title": "Italian Sausage",
+            "slug": "italian-sausage",
+            "recipeImg": "https://s3.us-west-2.amazonaws.com/content.dinnerat8.kristengrote.com/abstracts/italian-sausage.webp"
+        },
+        {
+            "id": 32398,
+            "title": "Peanut Sesame Noodles",
+            "slug": "peanut-sesame-noodles",
+            "recipeImg": "https://s3.us-west-2.amazonaws.com/content.dinnerat8.kristengrote.com/abstracts/peanut-sesame-noodles.webp"
+        },
+        {
+            "id": 31902,
+            "title": "Chicken Stock",
+            "slug": "chicken-stock",
+            "recipeImg": "https://s3.us-west-2.amazonaws.com/content.dinnerat8.kristengrote.com/abstracts/chicken-stock.jpeg"
+        },
+        {
+            "id": 29547,
+            "title": "Quiche Lorraine",
+            "slug": "quiche-lorraine",
+            "recipeImg": "https://s3.us-west-2.amazonaws.com/content.dinnerat8.kristengrote.com/abstracts/quiche-lorraine.webp"
+        },
+        {
+            "id": 28938,
+            "title": "Spiced Green Sauce",
+            "slug": "spiced-green-sauce",
+            "recipeImg": "https://s3.us-west-2.amazonaws.com/content.dinnerat8.kristengrote.com/abstracts/cilantro.webp"
+        },
+        {
+            "id": 28806,
+            "title": "Grog",
+            "slug": "grog",
+            "recipeImg": "https://s3.us-west-2.amazonaws.com/content.dinnerat8.kristengrote.com/abstracts/grog.jpeg"
+        },
+        {
+            "id": 28001,
+            "title": "Raisin-Nut Granola",
+            "slug": "raisin-nut-granola",
+            "recipeImg": "https://s3.us-west-2.amazonaws.com/content.dinnerat8.kristengrote.com/abstracts/raisin-nut-granola.jpeg"
+        },
+        {
+            "id": 27443,
+            "title": "Pickled Onions",
+            "slug": "pickled-onions",
+            "recipeImg": "https://s3.us-west-2.amazonaws.com/content.dinnerat8.kristengrote.com/abstracts/pickled-onions.webp"
+        },
+        {
+            "id": 27090,
+            "title": "Kale & Spinach Pesto",
+            "slug": "kale-spinach-pesto",
+            "recipeImg": "https://s3.us-west-2.amazonaws.com/content.dinnerat8.kristengrote.com/abstracts/pesto.webp"
+        },
+        {
+            "id": 26900,
+            "title": "Hummus",
+            "slug": "hummus",
+            "recipeImg": "https://s3.us-west-2.amazonaws.com/content.dinnerat8.kristengrote.com/abstracts/hummus.webp"
+        }
+    ],
+    "meta": {
+        "pagination": {
+            "total": 46,
+            "count": 12,
+            "per_page": 12,
+            "current_page": 1,
+            "total_pages": 4,
+            "links": {
+                "next": "https://dinner-at-8-cms.ddev.site/recipes.json?page=2"
+            }
+        }
+    }
+}

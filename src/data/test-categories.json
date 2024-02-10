@@ -1,0 +1,202 @@
+{
+    "cats": [
+        {
+            "groupId": 2,
+            "groupName": "Meal Type",
+            "id": 221,
+            "title": "Appetizer"
+        },
+        {
+            "groupId": 2,
+            "groupName": "Meal Type",
+            "id": 11041,
+            "title": "Bread"
+        },
+        {
+            "groupId": 2,
+            "groupName": "Meal Type",
+            "id": 164,
+            "title": "Breakfast"
+        },
+        {
+            "groupId": 2,
+            "groupName": "Meal Type",
+            "id": 2757,
+            "title": "Brunch"
+        },
+        {
+            "groupId": 2,
+            "groupName": "Meal Type",
+            "id": 1298,
+            "title": "Cocktails"
+        },
+        {
+            "groupId": 2,
+            "groupName": "Meal Type",
+            "id": 21076,
+            "title": "Condiment"
+        },
+        {
+            "groupId": 2,
+            "groupName": "Meal Type",
+            "id": 167,
+            "title": "Dessert"
+        },
+        {
+            "groupId": 2,
+            "groupName": "Meal Type",
+            "id": 166,
+            "title": "Dinner"
+        },
+        {
+            "groupId": 2,
+            "groupName": "Meal Type",
+            "id": 165,
+            "title": "Lunch"
+        },
+        {
+            "groupId": 2,
+            "groupName": "Meal Type",
+            "id": 1275,
+            "title": "Picnic"
+        },
+        {
+            "groupId": 2,
+            "groupName": "Meal Type",
+            "id": 1276,
+            "title": "Potluck"
+        },
+        {
+            "groupId": 2,
+            "groupName": "Meal Type",
+            "id": 223,
+            "title": "Salad"
+        },
+        {
+            "groupId": 2,
+            "groupName": "Meal Type",
+            "id": 169,
+            "title": "Side Dish"
+        },
+        {
+            "groupId": 2,
+            "groupName": "Meal Type",
+            "id": 168,
+            "title": "Snack"
+        },
+        {
+            "groupId": 2,
+            "groupName": "Meal Type",
+            "id": 222,
+            "title": "Soup"
+        },
+        {
+            "groupId": 3,
+            "groupName": "Dietary Restrictions",
+            "id": 172,
+            "title": "Gluten Free"
+        },
+        {
+            "groupId": 3,
+            "groupName": "Dietary Restrictions",
+            "id": 173,
+            "title": "Low Carb"
+        },
+        {
+            "groupId": 3,
+            "groupName": "Dietary Restrictions",
+            "id": 171,
+            "title": "Vegan"
+        },
+        {
+            "groupId": 3,
+            "groupName": "Dietary Restrictions",
+            "id": 170,
+            "title": "Vegetarian"
+        },
+        {
+            "groupId": 4,
+            "groupName": "Season",
+            "id": 5911,
+            "title": "Fall"
+        },
+        {
+            "groupId": 4,
+            "groupName": "Season",
+            "id": 5909,
+            "title": "Spring"
+        },
+        {
+            "groupId": 4,
+            "groupName": "Season",
+            "id": 5910,
+            "title": "Summer"
+        },
+        {
+            "groupId": 4,
+            "groupName": "Season",
+            "id": 5912,
+            "title": "Winter"
+        },
+        {
+            "groupId": 5,
+            "groupName": "Holiday",
+            "id": 5915,
+            "title": "Christmas"
+        },
+        {
+            "groupId": 5,
+            "groupName": "Holiday",
+            "id": 5917,
+            "title": "Easter"
+        },
+        {
+            "groupId": 5,
+            "groupName": "Holiday",
+            "id": 5919,
+            "title": "Halloween"
+        },
+        {
+            "groupId": 5,
+            "groupName": "Holiday",
+            "id": 5918,
+            "title": "Independence Day"
+        },
+        {
+            "groupId": 5,
+            "groupName": "Holiday",
+            "id": 5916,
+            "title": "Thanksgiving"
+        },
+        {
+            "groupId": 6,
+            "groupName": "Protein Type",
+            "id": 7384,
+            "title": "Beef"
+        },
+        {
+            "groupId": 6,
+            "groupName": "Protein Type",
+            "id": 7385,
+            "title": "Fish"
+        },
+        {
+            "groupId": 6,
+            "groupName": "Protein Type",
+            "id": 7387,
+            "title": "Lamb"
+        },
+        {
+            "groupId": 6,
+            "groupName": "Protein Type",
+            "id": 7386,
+            "title": "Pork"
+        },
+        {
+            "groupId": 6,
+            "groupName": "Protein Type",
+            "id": 7383,
+            "title": "Poultry"
+        }
+    ]
+}

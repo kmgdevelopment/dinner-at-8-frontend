@@ -1,0 +1,13 @@
+// Note: font is loaded with NextJS in _app
+
+// SETUP
+@import "normalize-scss/sass/normalize/import-now";
+@import "setup/helpers";
+@import "setup/settings";
+
+// METHODS
+@import "methods/base";
+@import "methods/typography";
+
+// base text & element styles plus #media element
+@import "patterns/base";

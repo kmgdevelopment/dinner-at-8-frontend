@@ -1,0 +1,27 @@
+.nav-pager {
+	width: 100%;
+	display: flex;
+	a {
+		text-decoration: none;
+	}
+	span {
+		color: $color-chrome-dark;
+	}
+	.pages {
+		width: 80%;
+		text-align: center;
+		a,span {
+			margin: 0 0.25em;
+		}
+	}
+	.prev,
+	.next {
+		width: 25%;
+		@media #{$media-medium} {
+			width: 10%;
+		}
+	}
+	.next {
+		text-align: right;
+	}
+}

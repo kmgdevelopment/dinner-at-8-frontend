@@ -1,0 +1,93 @@
+@import '@/sass/setup/settings';
+@import '@/sass/setup/helpers';
+@import '@/sass/methods/base';
+@import '@/sass/methods/layouts';
+@import '@/sass/methods/typography';
+
+.category-filters {
+	h5,h6 {
+		@include font-stack('Montserrat',sans-serif);
+		font-weight: 600;
+		font-size: 1em;
+	}
+	.menu-heading,
+	.menu-body {
+		@include layout-wrapper;
+	}
+	.menu-heading {
+		background-color: black;
+		.content {
+			display: flex;
+			align-items: center;
+		}
+		.toggle, .clear {
+			@include reset-button;
+			padding: 1em 0;
+			display: block;
+			font-size: .89rem;
+			&:hover {
+				cursor: pointer;
+			}
+		}
+		.toggle {
+			color: $color-light;
+			font-weight: bold;
+		}
+		.clear {
+			color: #B2B2B2;
+			margin-left: auto;
+		}
+	}
+	.menu-body {
+		border-top: 1px solid #494949;
+		background-color: black;
+		color: white;
+		overflow: hidden;
+		.content {
+			padding-top: $section-padding/2;
+			padding-bottom: $section-padding/2;
+		}
+        &.hidden {
+            display: none;
+        }
+	}
+
+	form {
+        .fieldset {
+            @include layout-grid-base;
+        }
+        .fieldgroup {
+            @media #{$media-large} {
+                width: percentage(2.4/12);
+            }
+        }
+        h6 {
+            font-size: .89rem;
+			font-weight: 700;
+        }
+		.field-checkbox {
+			padding: 0.25rem 0;
+			input {
+				margin-right: .5rem;
+			}
+			label {
+				font-size: .89rem;
+			}
+		}
+        .buttons {
+            width: 100%;
+            margin-top: 1.5rem;
+        }
+        input[type='submit'] {
+            background-color: white;
+            color: black;
+            border: none;
+            border-radius: 50px;
+            font-size: rem(14);
+            padding: 0.5rem 2rem;
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }
+}

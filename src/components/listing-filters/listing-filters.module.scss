@@ -1,0 +1,13 @@
+@import '@/sass/methods/layouts';
+
+.listing-filters {
+    @include layout-group;
+    > *[class^='section-wrap'] {
+        padding-bottom: 0;
+    }
+}
+
+.filter-component {
+    @include layout-8-col;
+    @include layout-centered;
+}

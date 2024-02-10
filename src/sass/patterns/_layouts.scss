@@ -1,0 +1,72 @@
+// --------------------------------
+// SECTIONS
+// --------------------------------
+.section-wrap {
+	padding-top: $section-padding;
+	padding-bottom: $section-padding;
+	> * {
+		margin-bottom: 1.5rem;
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+}
+.section {
+	@include layout-wrapper;
+}
+
+// --------------------------------
+// GRIDS
+// --------------------------------
+.layout-grid {
+	@include layout-grid-base;
+	&.cols-2,
+	&.cols-3,
+	&.cols-4 {
+		> * {
+			@media #{$media-medium} {
+				width: percentage(6/12);
+				max-width: percentage(6/12); // IE11
+			}
+		}
+	}
+	&.cols-3,
+	&.cols-4 {
+		> * {
+			@media #{$media-medium-2} {
+				width: percentage(4/12);
+				max-width: percentage(4/12); // IE11
+			}
+		}
+	}
+	&.cols-4 {
+		> * {
+			@media #{$media-large} {
+				width: percentage(3/12);
+				max-width: percentage(3/12); // IE11
+			}
+		}
+	}
+	&.stretch {
+		align-items: stretch;
+		> * {
+			display: flex;
+			align-items: stretch;
+			> * {
+				display: flex;
+				align-items: stretch;
+				width: 100%;
+			}
+		}
+	}
+}
+
+// --------------------------------
+// CUSTOM COLUMNS
+// --------------------------------
+*[class^='layout-'].centered {
+	@include layout-centered;
+}
+.layout-8-col {
+	@include layout-8-col;
+}

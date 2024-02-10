@@ -1,0 +1,25 @@
+@import '@/sass/setup/settings';
+@import '@/sass/methods/modules';
+
+.recipe-card {
+	@include module-base;
+	> * {
+		background-color: $color-chrome-light;
+		color: $color-body;
+	}
+	.media {
+		width: 100%;
+		height: 200px;
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+	.text {
+		padding: 1rem;
+	}
+	.h {
+		margin-bottom: 0;
+	}
+}

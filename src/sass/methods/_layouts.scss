@@ -1,0 +1,47 @@
+@import "../setup/settings";
+
+$section-padding: 3rem;
+
+@mixin layout-group {
+	width: 100%;
+}
+
+@mixin layout-wrapper {
+	> .gutter {
+		padding-left: $gutter;
+		padding-right: $gutter;
+		> .container {
+			max-width: $max-width;
+			margin-left: auto;
+			margin-right: auto;
+			> .content {
+				width: 100%; // nextjs
+			}
+		}
+	}
+}
+
+@mixin layout-grid-base {
+	@include reset-list;
+	margin-left: (-($gutter/2));
+	margin-right: (-($gutter/2));
+	margin-bottom: (-($gutter));
+	display: flex;
+	flex-wrap: wrap;
+	> * {
+		width: 100%;
+		padding: 0 ($gutter/2) $gutter ($gutter/2);
+		flex: 0 1 auto; //IE11
+	}
+}
+
+@mixin layout-8-col {
+	@media #{$media-medium-2} {
+		width: percentage(8/12);
+	}
+}
+
+@mixin layout-centered {
+	margin-left: auto;
+	margin-right: auto;
+}

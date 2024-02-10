@@ -1,0 +1,75 @@
+// --------------------------------------
+// PATTERN COLORS
+// --------------------------------------
+
+/*
+ * Keys are class names (except default)
+ * Color group names may also be used.
+ * So if all Event templates use the same color,
+ * the class .c-events may be used
+ */
+$color-variant-list: (
+	'default' : $color-body,
+	'p1' 			: $color-p1, 
+	'p2' 			: $color-p2,
+	'p3' 			: $color-p3,
+	'group1'	: $color-p1
+);
+
+/*
+ * For every design pattern that requires a color
+ * variant, include this mixin with the variable $color-replace
+ * .module-example {
+ * 	@include color-variants {
+ *			border-top-color: $color-replace;
+ *		}
+ * }
+ */
+@mixin color-variants {
+	@each $class, $color in $color-variant-list {
+		$color-replace: $color !global;
+		@if $class == 'default' {
+			@content;
+		}
+		@else {
+			&.c-#{$class}, 
+			.c-#{$class} &,
+			*[class*='c-'] &.c-#{$class}, 
+			*[class*='c-'] .c-#{$class} &,
+			*[class*='c-'] *[class*='c-'] &.c-#{$class},
+			*[class*='c-'] *[class*='c-'] .c-#{$class} & {
+				@content;
+			}
+		}
+	}
+}
+
+// --------------------------------------
+// BACKGROUND COLORS
+// --------------------------------------
+
+/*
+ * 'img' is for sections with background images
+ * a fallback color is applied just in case
+ */
+$bg-color-variant-list: (
+	'img' : $color-dark,
+	'dk'	: $color-dark,
+	'lt'	: $color-light,
+	'cl'  : $color-chrome-light,
+	'cm'  : $color-chrome-medium,
+	'p1'  : $color-p1
+);
+
+@each $class, $color in $bg-color-variant-list {
+	.c-bg-#{$class}, 
+	*[class*='module-'].c-bg-#{$class} {
+		background-color: $color;
+		@if lightness($color) < 50 {
+			color: white;
+			p a {
+				color: white;
+			}
+		}
+	}
+}
