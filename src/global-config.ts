@@ -1,9 +1,9 @@
 interface globalConfig {
     siteName: string;
-    apiBaseUrl: string;
+    apiBaseUrl: string | undefined;
 }
 
 export const globalConfig: globalConfig = {
     siteName: "Dinner at 8",
-    apiBaseUrl: "https://dinner-at-8-cms.ddev.site",
+    apiBaseUrl: process.env.NEXT_PUBLIC_API_BASE_URL
 }
