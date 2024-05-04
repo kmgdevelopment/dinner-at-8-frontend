@@ -241,6 +241,7 @@ export default function Home() {
             // we're ignoring submit since onchange
             // handles everything for us already
             e.preventDefault();
+            updateUrl(searchField, submittedCategories.current);
         }
     }
 
@@ -425,6 +426,7 @@ export async function getStaticProps() {
     return {
         props: {
             dehydratedState: dehydrate(queryClient)
-        }
+        },
+        revalidate: 60 * 60 * 24
     };
 }
