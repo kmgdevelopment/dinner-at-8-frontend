@@ -9,7 +9,7 @@ export default function EntryHeroImg(data: RecipeEntry) {
                 width={600}
                 height={200}
                 alt={ data.title }
-                src={ data.recipeImg }
+                src={ data.recipeImg[0].url }
                 sizes="(min-width: 1061px) 1000px, 94vw"
                 priority={true}
             />

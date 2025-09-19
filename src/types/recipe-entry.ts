@@ -7,7 +7,11 @@ export default interface RecipeEntry {
         "quantity": string,
         "unit": string
     } | null,
-    "recipeImg": string,
+    "recipeImg": [
+        {
+            url: string,
+        }
+    ],
     "recipeIngredients": [
         {
             "id": number,

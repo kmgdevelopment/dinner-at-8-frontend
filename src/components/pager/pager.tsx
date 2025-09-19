@@ -1,61 +1,37 @@
 import styles from './pager.module.scss';
-import PagerMeta from '@/types/pager-meta';
 import classNames from 'classnames/bind';
-import Link from 'next/link';
-
-const cx = classNames.bind(styles);
-
 interface Pager {
-    pagerData: PagerMeta,
-    hasNextPage: boolean,
-    isFetchingNextPage: boolean,
-    fetchNextPage: () => void,
+    entryCount: number,
+    limit: number,
+    offset: number,
+    loading: boolean,
     viewRef: () => void
 }
 
+const cx = classNames.bind(styles);
+
 export default function Pager(data: Pager) {
-    const pagerData = data.pagerData;
-    const prevPage = pagerData.links?.previous ? pagerData.current_page - 1 : null;
-    const nextPage = pagerData.links?.next ? pagerData.current_page + 1 : null;
+    const totalPages = Math.ceil( data.entryCount / data.limit );
+    const currentPage = (data.offset / data.limit) + 1;
 
     // hide if the next page is currently being fetched
     // or if we've reached the last page
     const pagerClasses = cx({
         "pager": true,
-        "invisible": data.isFetchingNextPage || !data.hasNextPage
+        "invisible": data.loading || currentPage == totalPages
     });
     
     return (
         <>
-            {pagerData.total_pages > 1 && (
+            {totalPages > 1 && (
                 <nav 
                     className={ pagerClasses }
                     ref={ data.viewRef }
-                >
-                    <div className={ styles['prev'] }>
-                        { pagerData.links?.previous && (
-                            <Link
-                                href={`/?page=${prevPage}`}
-                            >
-                                &lt; Prev
-                            </Link>
-                        )}
-                    </div>
-                    
+                >   
                     <div className={ styles['pages'] }>
-                        <p>Page {pagerData.current_page} of {pagerData.total_pages}</p>
+                        <p>Page {currentPage} of {totalPages}</p>
                     </div>
                     
-                    <div className={ styles['next'] }>
-                        { pagerData.links?.next && (
-                            <Link 
-                                href={`/?page=${nextPage}`}
-                                onClick={ () => data.fetchNextPage() }
-                            >
-                                Next &gt;
-                            </Link>
-                        )}
-                    </div>
                 </nav>
             )}
         </>

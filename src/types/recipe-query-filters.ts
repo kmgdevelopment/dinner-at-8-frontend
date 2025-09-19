@@ -1,4 +1,8 @@
 export default interface RecipeQueryFilters {
-    searchQuery?: string;
-    categories?: number[];
+    section: string[],
+    limit: number,
+    offset: number,
+    search?: string,
+    orderBy?: string,
+    relatedTo?: (string | number)[] | undefined,
 }

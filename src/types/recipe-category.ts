@@ -1,6 +1,6 @@
 export default interface RecipeCategory {
     groupId: number;
-    groupName: string;
+    groupHandle: string;
     id: number;
     title: string;
 }

@@ -3,7 +3,8 @@ import SectionWrap from '../layouts/section-wrap/section-wrap';
 import Section from '../layouts/section/section';
 // both types and components are exported
 import SearchFilter from '../search-filter/search-filter';
-import CategoryFilters from '../category-filter/category-filters';
+import CategoryFilters from '../category-filters/category-filters';
+
 
 export default function ListingFilters({
     searchField,
@@ -12,7 +13,9 @@ export default function ListingFilters({
     setCategoryFields,
     handleFilterCheckboxChange,
     handleFilterSubmit,
-    handleFilterClear
+    handleFilterClear,
+    setCategoryFieldDataLoaded
+
 }: SearchFilter & CategoryFilters) {
     return (
         <header className={ styles['listing-filters'] }>
@@ -20,8 +23,8 @@ export default function ListingFilters({
                 <Section>
                     <div className={ styles['filter-component'] }>
                         <SearchFilter 
-                            searchField={searchField}
-                            handleSearch={handleSearch}
+                            searchField={searchField} 
+                            handleSearch={handleSearch} 
                         />
                     </div>
                 </Section>
@@ -32,6 +35,7 @@ export default function ListingFilters({
                         handleFilterCheckboxChange={handleFilterCheckboxChange}
                         handleFilterSubmit={handleFilterSubmit}
                         handleFilterClear={handleFilterClear}
+                        setCategoryFieldDataLoaded={setCategoryFieldDataLoaded}
                     />
                 </Section>
             </SectionWrap>

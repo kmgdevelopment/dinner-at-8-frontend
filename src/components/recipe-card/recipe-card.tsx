@@ -12,7 +12,7 @@ export default function RecipeCard({ entryData }: { entryData: RecipeListing }) 
                         width={313}
                         height={200}
                         alt={ entryData.title }
-                        src={ entryData.recipeImg ? entryData.recipeImg : '/assets/img/recipe-default.jpg' }
+                        src={ entryData.recipeImg.length ? entryData.recipeImg[0].url : '/assets/img/recipe-default.jpg' }
                     />
                 </div>
                 <div className={ styles['text'] }>
