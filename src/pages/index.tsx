@@ -108,7 +108,7 @@ export default function Home() {
             fetchMore({
                 variables: {
                     ...queryVariables,
-                    offset: pagerOffset.current += queryLimit.current
+                    offset: pagerOffset.current = data.recipeList.length
                 }
             });
         }
@@ -151,14 +151,15 @@ export default function Home() {
         router,
         submittedCategories,
     });
-    
+
     return (
         <LayoutGlobal 
             title={ templateProps.title }
         >
             <DynamicListingFilters 
-                searchField={searchField} 
-                handleSearch={handleSearch} 
+                searchInputValue={searchField} 
+                handleSearchChange={handleSearch} 
+                handleSearchSubmit={handleSearch}
                 categoryFields={categoryFields}
                 setCategoryFields={setCategoryFields}
                 handleFilterCheckboxChange={handleFilterCheckboxChange}
@@ -179,7 +180,7 @@ export default function Home() {
                             </Col>  
 
                             <Col>
-                                {data && (
+                                {data && data.recipeList.length < data.entryCount && (
                                     <Pager 
                                         entryCount={data.entryCount}
                                         limit={queryLimit.current}

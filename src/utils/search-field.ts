@@ -10,10 +10,10 @@ export function handleSearchFactory({
     submittedCategories,
 }: HandleSearch) {
     return function handleSearch(e: React.FormEvent) {
-        // every time the input changes, reset the debounce timer
-        clearTimeout(debounceTimer.current);
+        if (e.type == "change") {
+            // every time the input changes, reset the debounce timer
+            clearTimeout(debounceTimer.current);
 
-        if( e.type == 'change' ) {
             // tell query string update effect not to
             // update input field value
             searchIsChanging.current = true;
@@ -29,16 +29,15 @@ export function handleSearchFactory({
             // refetch the query with the new filter parameters
             debounceTimer.current = window.setTimeout(() => {
                 updateUrl({
-                    sq: target.value, 
-                    cats: submittedCategories(), 
+                    sq: target.value,
+                    cats: submittedCategories(),
                     router: router,
                 });
-            }, 500);            
-
-        } else if( e.type == 'submit' ) {
+            }, 500);
+        } else if (e.type == "submit") {
             // we're ignoring submit since onchange
             // handles everything for us already
             e.preventDefault();
         }
-    }
+    };
 }

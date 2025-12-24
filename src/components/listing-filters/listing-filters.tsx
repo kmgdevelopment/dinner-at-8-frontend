@@ -1,35 +1,35 @@
-import styles from './listing-filters.module.scss';
-import SectionWrap from '../layouts/section-wrap/section-wrap';
-import Section from '../layouts/section/section';
+import styles from "./listing-filters.module.scss";
+import SectionWrap from "../layouts/section-wrap/section-wrap";
+import Section from "../layouts/section/section";
 // both types and components are exported
-import SearchFilter from '../search-filter/search-filter';
-import CategoryFilters from '../category-filters/category-filters';
-
+import SearchFilter from "../search-filter/search-filter";
+import CategoryFilters from "../category-filters/category-filters";
 
 export default function ListingFilters({
-    searchField,
-    handleSearch,
+    searchInputValue,
+    handleSearchSubmit,
+    handleSearchChange,
     categoryFields,
     setCategoryFields,
     handleFilterCheckboxChange,
     handleFilterSubmit,
     handleFilterClear,
-    setCategoryFieldDataLoaded
-
+    setCategoryFieldDataLoaded,
 }: SearchFilter & CategoryFilters) {
     return (
-        <header className={ styles['listing-filters'] }>
+        <header className={styles["listing-filters"]}>
             <SectionWrap>
                 <Section>
-                    <div className={ styles['filter-component'] }>
-                        <SearchFilter 
-                            searchField={searchField} 
-                            handleSearch={handleSearch} 
+                    <div className={styles["filter-component"]}>
+                        <SearchFilter
+                            searchInputValue={searchInputValue}
+                            handleSearchSubmit={handleSearchSubmit}
+                            handleSearchChange={handleSearchChange}
                         />
                     </div>
                 </Section>
                 <Section contentWrap={false}>
-                    <CategoryFilters 
+                    <CategoryFilters
                         categoryFields={categoryFields}
                         setCategoryFields={setCategoryFields}
                         handleFilterCheckboxChange={handleFilterCheckboxChange}
@@ -40,5 +40,5 @@ export default function ListingFilters({
                 </Section>
             </SectionWrap>
         </header>
-    )
+    );
 }

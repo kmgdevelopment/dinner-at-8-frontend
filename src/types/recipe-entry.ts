@@ -3,10 +3,10 @@ import RecipeIngredient from "./recipe-ingredient"
 export default interface RecipeEntry {
     "title": string,
     "recipeServes": number | null,
-    "recipeMakes": {
+    "recipeMakes": [{
         "quantity": string,
         "unit": string
-    } | null,
+    }],
     "recipeImg": [
         {
             url: string,
