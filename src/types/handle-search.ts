@@ -1,9 +1,7 @@
 import { MutableRefObject } from 'react';
 
 export default interface HandleSearch {
-    setSearchField: (value: string) => void;
-    debounceTimer: MutableRefObject<number>;
-    searchIsChanging: MutableRefObject<boolean>;
+    setSearchInputValue: (value: string) => void;
     router: any;
     submittedCategories: () => number[] | undefined;
 };

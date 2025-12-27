@@ -9,6 +9,8 @@ import applyQueryString from '@/utils/apply-query-string';
 import { handleFilterCheckboxChangeFactory, handleFilterClearFactory, handleFilterSubmitFactory } from '@/utils/category-filters';
 import { handleSearchFactory } from '@/utils/search-field';
 import updateUrl from '@/utils/update-url';
+import { debounce } from 'lodash';
+
 
 // components
 import LayoutGlobal from '@/components/layouts/global';
@@ -18,6 +20,7 @@ import RecipeEntriesList from '@/components/recipe-entries-list/recipe-entries-l
 
 // types
 import type RecipeCategoryCheckbox from '@/types/recipe-category-checkbox';
+import type HandleSearch from '@/types/handle-search';
 
 const templateProps = {
     title: "Recipe Listing"
@@ -54,9 +57,7 @@ export default function Home() {
     // value of the search input can be different from
     // the query filter value for various reasons so we store
     // them separately
-    const [searchField, setSearchField] = useState('');
-    const searchIsChanging = useRef(false);    
-    const debounceTimer = useRef(0);
+    const [searchInputValue, setSearchInputValue] = useState('');
     
     // submitted categories must be stored separately
     // from the checkbox UI state to prevent data from
@@ -88,10 +89,10 @@ export default function Home() {
                 categoryFields: categoryFields, 
                 setCategoryFields: setCategoryFields,
                 submittedCategories: submittedCategories, // getter and setter passed in the same property
-                searchField: searchField,
-                setSearchField: setSearchField,
+                searchField: searchInputValue,
+                setSearchField: setSearchInputValue,
                 submittedSearchQuery: submittedSearchQuery, // getter and setter passed in the same property
-                searchIsChanging: searchIsChanging,
+                //searchIsChanging: searchIsChanging,
                 orderBy: queryOrderBy,
                 pagerOffset: pagerOffset,
             });
@@ -114,12 +115,6 @@ export default function Home() {
         }
         
     }, [inView]);
-
-    // clear any pending debounce timers
-    // when component unmounts
-    useEffect(() => {
-        return () => clearTimeout(debounceTimer.current);
-    }, []);
 
     // EVENT HANDLERS
     // factories are used to pass in state
@@ -144,20 +139,49 @@ export default function Home() {
         router
     });
 
-    const handleSearch = handleSearchFactory({
-        setSearchField,
-        debounceTimer,
-        searchIsChanging,
-        router,
-        submittedCategories,
-    });
+    // we use a ref to prevent the debounce timer from
+    // being reset between re-renders when the input value is changed
+    const debouncedSearch = useRef(debounce((inputValue) => {
+        updateUrl({
+            sq: inputValue,
+            cats: submittedCategories(),
+            router: router,
+        });
+    }, 500));
+
+    const handleSearch = (e: React.FormEvent) => {
+        if (e.type == "change") {
+            // https://bobbyhadz.com/blog/typescript-property-value-not-exist-type-eventtarget
+            const target = e.target as HTMLInputElement;
+            const inputValue = target.value;
+
+            // update input value immediately
+            setSearchInputValue(inputValue);
+
+            // start/restart the debounce timer
+            // on every input change
+            debouncedSearch.current(inputValue);
+
+        } else if (e.type == "submit") {
+            // we're ignoring submit since onchange
+            // handles everything for us already
+            e.preventDefault();
+        }
+    };
+
+    // cleanup
+    useEffect(() => {
+        return () => {
+            debouncedSearch.current.cancel();
+        }
+    }, [])
 
     return (
         <LayoutGlobal 
             title={ templateProps.title }
         >
             <DynamicListingFilters 
-                searchInputValue={searchField} 
+                searchInputValue={searchInputValue} 
                 handleSearchChange={handleSearch} 
                 handleSearchSubmit={handleSearch}
                 categoryFields={categoryFields}

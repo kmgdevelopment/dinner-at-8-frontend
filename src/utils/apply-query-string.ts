@@ -57,13 +57,11 @@ function updateSearchFilter({
     queryString,
     searchField,
     setSearchField,
-    searchIsChanging,
     orderBy,
 }: {
     queryString: string | string[] | undefined;
     searchField: string;
     setSearchField: (s: string) => void;
-    searchIsChanging: React.MutableRefObject<boolean>;
     orderBy: React.MutableRefObject<string|undefined>;
 }) {
     // set the query string value if there is one, undefined if not
@@ -86,14 +84,11 @@ function updateSearchFilter({
     // update search input if filter effect
     // was not triggered by a manual user input change
     // i.e. direct URL navigation, back/forward button click, etc.
-    if( !searchIsChanging.current && newSearchField != searchField ) setSearchField(newSearchField); 
+    if( newSearchField != searchField ) setSearchField(newSearchField); 
     
     // order results by score if a query exists
     // otherwise use default ordering (postDate desc)
     orderBy.current = (newSearchQuery !== undefined) ? 'score' : undefined;
-
-    // reset change listener
-    searchIsChanging.current = false;
 
     // for Apollo filtering purposes, 
     // undefined is equivalent to no search query
@@ -134,7 +129,6 @@ export default function applyQueryString({
     searchField,
     setSearchField,
     submittedSearchQuery,
-    searchIsChanging,
     orderBy,
     pagerOffset,
 }: ApplyQueryString) { 
@@ -148,7 +142,6 @@ export default function applyQueryString({
         queryString: queryString.query,
         searchField: searchField,
         setSearchField: setSearchField,
-        searchIsChanging: searchIsChanging,
         orderBy: orderBy,
     });
 

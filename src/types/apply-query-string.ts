@@ -11,7 +11,6 @@ export default interface ApplyQueryString {
     searchField: string;
     setSearchField: Dispatch<SetStateAction<string>>;
     submittedSearchQuery: ReactiveVar<string|undefined>;
-    searchIsChanging: MutableRefObject<boolean>;
     orderBy: MutableRefObject<string|undefined>;
     pagerOffset: MutableRefObject<number>;
 }
