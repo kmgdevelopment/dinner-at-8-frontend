@@ -11,56 +11,26 @@ const GET_RECIPE = gql`
         ) {
             title
             ... on recipes_recipes_Entry {
-            recipeServes
-            recipeMakes {
-                quantity
-                unit
-            }
-            recipeImg {
-                url
-            }
-            recipeIngredients {
-                ... on recipeIngredients_heading_BlockType {
-                id
-                type: typeHandle
-                text
+                recipeServes
+                recipeMakes {
+                    quantity
+                    unit
                 }
-                ... on recipeIngredients_ingredientList_BlockType {
-                id
-                type: typeHandle
-                list {
-                    ... on list_BlockType {
-                    id
+                recipeImg {
+                    url
+                }
+                recipeIngredients_new {
                     quantity
                     unit
                     ingredient
                     preparation
-                    }
+                    heading
                 }
-                }
-            }
-            recipeInstructions {
-                ... on recipeInstructions_heading_BlockType {
-                id
-                type: typeHandle
-                text
-                }
-                ... on recipeInstructions_instructionList_BlockType {
-                id
-                type: typeHandle
-                list: theList {
-                    ... on theList_BlockType {
-                    id
-                    description
-                    }
-                }
-                }
-            }
-            recipeNotes
-            recipeSourceName
-            recipeSourceUrl
-            }
-            
+                recipeInstructions_new
+                recipeNotes
+                recipeSourceName
+                recipeSourceUrl
+            } 
         }
     }
 `;

@@ -21,7 +21,7 @@ export default function EntryBanner(data: RecipeEntry) {
                     <h1>{data.title}</h1>
                     <small className={styles["amount"]}>
                         {data.recipeServes && `Serves: ${data.recipeServes}`}
-                        {data.recipeMakes[0].quantity &&
+                        {data.recipeMakes && data.recipeMakes[0].quantity &&
                             `Makes: ${data.recipeMakes[0].quantity} ${data.recipeMakes[0].unit}`}
                     </small>
                 </Section>

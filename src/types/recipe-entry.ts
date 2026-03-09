@@ -12,27 +12,8 @@ export default interface RecipeEntry {
             url: string,
         }
     ],
-    "recipeIngredients": [
-        {
-            "id": number,
-            "type": string,
-            "text": string,
-            "list": RecipeIngredient[]
-        }
-    ],
-    "recipeInstructions": [
-        {
-            "id": number,
-            "type": string,
-            "text": string,
-            "list": [
-                {
-                    "id": number,
-                    "description": string
-                }
-            ]
-        }
-    ],
+    "recipeIngredients_new": RecipeIngredient[],
+    "recipeInstructions_new": string,
     "recipeNotes": string | null,
     "recipeSourceName": string | null,
     "recipeSourceUrl": string | null
