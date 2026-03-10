@@ -22,7 +22,7 @@ const GET_RECIPE_ENTRIES = gql`
             id
             title
             uri
-            ... on recipes_recipes_Entry {
+            ... on recipes_Entry {
                 recipeImg {
                     url
                 }

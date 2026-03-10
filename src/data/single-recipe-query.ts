@@ -10,7 +10,7 @@ const GET_RECIPE = gql`
             limit: 1
         ) {
             title
-            ... on recipes_recipes_Entry {
+            ... on recipes_Entry {
                 recipeServes
                 recipeMakes {
                     quantity
@@ -26,8 +26,12 @@ const GET_RECIPE = gql`
                     preparation
                     heading
                 }
-                recipeInstructions_new
-                recipeNotes
+                recipeInstructions_new {
+                    rawHtml
+                }
+                recipeNotes {
+                    rawHtml
+                }
                 recipeSourceName
                 recipeSourceUrl
             } 

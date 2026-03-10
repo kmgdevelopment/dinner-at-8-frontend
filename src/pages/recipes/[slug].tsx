@@ -58,10 +58,10 @@ export default function Page(pageProps: { slug: string }) {
                                 <EntryInstructionList {...recipe} />
                             </Col>
                             
-                            { recipe.recipeNotes && (
+                            { recipe.recipeNotes?.rawHtml && (
                                 <Col>
                                     <h5>Notes</h5>
-                                    { parse(recipe.recipeNotes) }
+                                    { parse(recipe.recipeNotes.rawHtml) }
                                 </Col>
                             )}
                         </LayoutGrid>

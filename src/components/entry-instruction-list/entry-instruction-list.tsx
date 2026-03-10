@@ -7,7 +7,7 @@ export default function EntryInstructionList(data: RecipeEntry) {
         <div className={styles['entry-instruction-list']}>
             <h5>Instructions</h5>
 
-            { parse(data.recipeInstructions_new) }
+            { parse(data.recipeInstructions_new.rawHtml) }
         </div>
     )
 }
